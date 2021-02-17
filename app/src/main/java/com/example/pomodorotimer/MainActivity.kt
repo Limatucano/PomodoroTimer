@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
         var hasStarted = false
         var isPaused = false
 
-        val timer = object: CountDownTimer(20000,1000){
+        val timer = object: CountDownTimer(1500000,1000){
             override fun onTick(millisUntilFinished: Long){
-                txt_counter.text = millisUntilFinished.toString()
+                var minutes = millisUntilFinished/60000
+                var seconds = (millisUntilFinished%60000)/1000
+                txt_counter.text = "${minutes.toString()}:${seconds.toString()}"
             }
             override fun onFinish() {
                 TODO("Not yet implemented")
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 timer.start()
             } else if (!isPaused) {
                 isPaused = true
+                timer.cancel()
                 TODO("Pausar/Pause")
             } else {
                 isPaused = false
@@ -46,9 +49,11 @@ class MainActivity : AppCompatActivity() {
             //timer.cancel()
             hasStarted = false
             isPaused = false
-            timer.onTick(0L)
+            timer.onTick(0)
         }
 
     }
-
+    fun play_time(timer: CountDownTimer){
+        timer.start()
+    }
 }
