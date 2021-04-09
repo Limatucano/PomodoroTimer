@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#db524d">
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
@@ -15,7 +16,6 @@
         android:layout_gravity="center"
         app:cardElevation="15dp"
         app:cardCornerRadius="10dp"
-
         >
 
         <TextView
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00"
-            android:textSize="60sp"
+            android:textSize="90sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="90dp"/>
@@ -33,14 +33,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#259E2A"
-            app:icon="@drawable/ic_play"
+            android:text="Play"
+            android:textStyle="bold"
             android:layout_gravity="bottom|right"
             android:layout_margin="60dp" />
         <Button
             android:id="@+id/btn_stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/ic_stop"
+            android:text="Stop"
+            android:textStyle="bold"
             android:layout_gravity="bottom|left"
             android:layout_margin="60dp" />
 
